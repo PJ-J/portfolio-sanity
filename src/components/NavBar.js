@@ -12,8 +12,8 @@ const NavBar = () => {
             exact="true"
             className={({ isActive }) =>
               isActive
-                ? "inline-flex items-center py-2 px-3 m-2 text-white hover:text-white text-4xl font-bold cursive tracking-widest"
-                : "inline-flex items-center py-2 px-3 m-2 text-gray-200 hover:text-white text-4xl font-bold cursive tracking-widest"
+                ? "inline-flex items-center py-2 px-3 m-2 text-white hover:text-white text-3xl font-bold cursive tracking-widest"
+                : "inline-flex items-center py-2 px-3 m-2 text-gray-200 hover:text-white text-3xl font-bold cursive tracking-widest"
             }
           >
             Home
@@ -22,8 +22,8 @@ const NavBar = () => {
             to="/post"
             className={({ isActive }) =>
               isActive
-                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white"
-                : "inline-flex items-center py-3 px-3 my-2 rounded text-white opacity-60 hover:text-white hover:opacity-100"
+                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"
+                : "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl opacity-60 hover:text-white hover:opacity-100"
             }
           >
             Blog Posts
@@ -32,8 +32,8 @@ const NavBar = () => {
             to="/project"
             className={({ isActive }) =>
             isActive
-                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white"
-                : "inline-flex items-center py-3 px-3 my-2 rounded text-white opacity-60 hover:text-white hover:opacity-100"
+                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"
+                : "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl opacity-60 hover:text-white hover:opacity-100"
             }
           >
             Projects
@@ -42,8 +42,8 @@ const NavBar = () => {
             to="/about"
             className={({ isActive }) =>
             isActive
-                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white"
-                : "inline-flex items-center py-3 px-3 my-2 rounded text-white opacity-60 hover:text-white hover:opacity-100"
+                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"
+                : "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl opacity-60 hover:text-white hover:opacity-100"
             }
           >
             About Me
