@@ -4,7 +4,7 @@ import { SocialIcon } from "react-social-icons";
 
 const NavBar = () => {
   return (
-    <header className="bg-red-600">
+    <header className="bg-gray-900">
       <div className="container mx-auto flex justify-between">
         <nav className="flex">
           <NavLink
@@ -12,8 +12,8 @@ const NavBar = () => {
             exact="true"
             className={({ isActive }) =>
               isActive
-                ? "inline-flex items-center py-6 px-3 mr-4 text-white hover:text-green-800 text-4xl font-bold cursive tracking-widest"
-                : "inline-flex items-center py-6 px-3 mr-4 text-red-100 hover:text-green-800 text-4xl font-bold cursive tracking-widest"
+                ? "inline-flex items-center py-2 px-3 m-2 text-white hover:text-white text-4xl font-bold cursive tracking-widest"
+                : "inline-flex items-center py-2 px-3 m-2 text-gray-200 hover:text-white text-4xl font-bold cursive tracking-widest"
             }
           >
             Home
@@ -22,8 +22,8 @@ const NavBar = () => {
             to="/post"
             className={({ isActive }) =>
               isActive
-                ? "inline-flex items-center py-3 px-3 my-6 rounded text-red-100 bg-red-700"
-                : "inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
+                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white"
+                : "inline-flex items-center py-3 px-3 my-2 rounded text-white opacity-60 hover:text-white hover:opacity-100"
             }
           >
             Blog Posts
@@ -31,9 +31,9 @@ const NavBar = () => {
           <NavLink
             to="/project"
             className={({ isActive }) =>
-              isActive
-                ? "inline-flex items-center py-3 px-3 my-6 rounded text-red-100 bg-red-700"
-                : "inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
+            isActive
+                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white"
+                : "inline-flex items-center py-3 px-3 my-2 rounded text-white opacity-60 hover:text-white hover:opacity-100"
             }
           >
             Projects
@@ -41,15 +41,15 @@ const NavBar = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive
-                ? "inline-flex items-center py-3 px-3 my-6 rounded text-red-100 bg-red-700"
-                : "inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800"
+            isActive
+                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white"
+                : "inline-flex items-center py-3 px-3 my-2 rounded text-white opacity-60 hover:text-white hover:opacity-100"
             }
           >
             About Me
           </NavLink>
         </nav>
-        <div className="inline-flex py-3 px-3 my-6">
+        <div className="inline-flex py-3 px-3 my-2">
           <SocialIcon
             url="https://github.com/PJ-J"
             className="mr-4"
