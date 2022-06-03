@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
-import Picture from "../assets/images/adam-kool-ndN00KmbJ1c-unsplash.jpg";
+// import Picture from "../assets/images/adam-kool-ndN00KmbJ1c-unsplash.jpg";
 import AlloyModel from "../assets/images/alloy_model.png";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
+import ParticlesBg from "particles-bg";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -30,8 +31,9 @@ const About = () => {
 
   return (
     <main className="relative">
-      <img src={Picture} alt="nature" className="absolute w-full" />
-      <div className="p-10 lg:pt-20 container mx-auto relative">
+      {/* <img src={Picture} alt="nature" className="absolute w-full" /> */}
+      <ParticlesBg type="cobweb" bg={true} />
+      <div className="p-10 container mx-auto relative">
         <section className="bg-gray-700 rounded-lg shadow-2xl lg:flex px-20 py-10">
           <img
             src={urlFor(author.authorImage).url()}

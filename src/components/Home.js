@@ -8,7 +8,7 @@ const Home = () => {
       <ParticlesBg type="lines" num={150} bg={true} />
       <MouseParticles g={1} num={6} color="random" cull="container" level={6} />
       <section className="relative flex justify-center min-h-screen pt-12 lg:pt-64 px-8">
-        <h1 className="text-6xl text-white font-bold cursive leading-none lg:leading-snug home-name">Hey I'm PJ</h1>
+        <h1 className="text-6xl text-white font-bold cursive leading-none lg:leading-snug home-name">Hello, I'm PJ</h1>
       </section>
     </main>
   );

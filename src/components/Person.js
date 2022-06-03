@@ -3,6 +3,7 @@ import sanityClient from "../client";
 import { Link } from "react-router-dom";
 import './Person.css'
 import BlockContent from "@sanity/block-content-to-react";
+import ParticlesBg from "particles-bg";
 
 const Person = () => {
   const [personData, setPerson] = useState(null);
@@ -28,7 +29,8 @@ const Person = () => {
   }, []);
 
   return (
-    <main className="bg-gray-100 min-h-screen p-12">
+    <main className="min-h-screen p-12">
+    <ParticlesBg type="cobweb" bg={true} />
       <section className="container mx-auto">
       
         <h1 className="text-5xl flex justify-center cursive">Future Co-workers Page</h1>
