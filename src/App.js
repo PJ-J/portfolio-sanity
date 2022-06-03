@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from './components/Home'
 import About from './components/About'
-import SinglePost from './components/SinglePost'
-import Post from './components/Post'
+import SinglePerson from './components/SinglePerson'
+import Person from './components/Person'
 import Project from './components/Project'
 import NavBar from "./components/NavBar"
 
@@ -13,8 +13,8 @@ function App() {
      <Routes>
        <Route element={<Home />} path='/' exact="true" />
        <Route element={<About />} path='/about' />
-       <Route element={<SinglePost />} path='/post/:slug' />
-       <Route element={<Post />} path='/post' />
+       <Route element={<SinglePerson />} path='/person/:slug' />
+       <Route element={<Person />} path='/person' />
        <Route element={<Project />} path='/project' />
      </Routes>
    </BrowserRouter>

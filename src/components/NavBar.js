@@ -19,7 +19,7 @@ const NavBar = () => {
             Home
           </NavLink>
           <NavLink
-            to="/post"
+            to="/person"
             className={({ isActive }) =>
               isActive
                 ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"

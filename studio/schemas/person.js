@@ -1,11 +1,11 @@
 export default {
-  name: "post",
-  title: "Post",
+  name: "person",
+  title: "Person",
   type: "document",
   fields: [
     {
-      name: "title",
-      title: "Title",
+      name: "name",
+      title: "Name",
       type: "string",
     },
     {
@@ -13,7 +13,7 @@ export default {
       title: "Slug",
       type: "slug",
       options: {
-        source: "title",
+        source: "name",
         maxLength: 96,
       },
     },
@@ -42,11 +42,16 @@ export default {
       title: "Body",
       type: "blockContent",
     },
+    {
+      name: "quote",
+      title: "Quote",
+      type: "blockContent"
+    }
   ],
 
   preview: {
     select: {
-      title: "title",
+      title: "name",
       author: "author.name",
       media: "mainImage",
     },
