@@ -41,6 +41,9 @@ const SinglePerson = () => {
   return (
     <main className="bg-gray-200 min-h-screen p-20">
       <article className="container shadow-lg mx-auto bg-gray-300 rounded-lg">
+      <a href="/person">
+        <button className="p-3 bg-gray-400 w-full rounded-t-lg">Back to people</button>
+      </a>
         <header className="flex items-center justify-center">
           <div className="relative flex items-center justify-center p-8">
             <div className="bg-white bg-opacity-75 rounded p-12">

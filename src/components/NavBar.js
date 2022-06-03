@@ -18,20 +18,11 @@ const NavBar = () => {
           >
             Home
           </NavLink>
-          <NavLink
-            to="/person"
-            className={({ isActive }) =>
-              isActive
-                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"
-                : "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl opacity-60 hover:text-white hover:opacity-100"
-            }
-          >
-            Blog Posts
-          </NavLink>
+
           <NavLink
             to="/project"
             className={({ isActive }) =>
-            isActive
+              isActive
                 ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"
                 : "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl opacity-60 hover:text-white hover:opacity-100"
             }
@@ -41,12 +32,22 @@ const NavBar = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-            isActive
+              isActive
                 ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"
                 : "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl opacity-60 hover:text-white hover:opacity-100"
             }
           >
             About Me
+          </NavLink>
+          <NavLink
+            to="/person"
+            className={({ isActive }) =>
+              isActive
+                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"
+                : "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl opacity-60 hover:text-white hover:opacity-100"
+            }
+          >
+            People at Alloy
           </NavLink>
         </nav>
         <div className="inline-flex py-3 px-3 my-2">
