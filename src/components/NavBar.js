@@ -16,7 +16,17 @@ const NavBar = () => {
                 : "inline-flex items-center py-2 px-3 m-2 text-gray-200 hover:text-white text-3xl font-bold cursive tracking-widest"
             }
           >
-            Home
+            PJ
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"
+                : "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl opacity-60 hover:text-white hover:opacity-100"
+            }
+          >
+            About This Site
           </NavLink>
 
           <NavLink
@@ -29,16 +39,7 @@ const NavBar = () => {
           >
             Projects
           </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive
-                ? "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl"
-                : "inline-flex items-center py-3 px-3 my-2 rounded text-white text-xl opacity-60 hover:text-white hover:opacity-100"
-            }
-          >
-            About Me
-          </NavLink>
+          
           <NavLink
             to="/person"
             className={({ isActive }) =>

@@ -22,11 +22,11 @@ const Project = () => {
   }, []);
 
   return (
-    <main className="bg-green-100 min-h-screen p-12">
+    <main className="bg-gray-100 min-h-screen p-12">
       <section className="container mx-auto">
         <h1 className="text-5xl flex justify-center cursive">My Projects</h1>
         <h2 className="text-lg text-gray-600 flex justify-center mb-12">
-          Welcome to my projects page
+          Resume projects with links to Github
         </h2>
         <section className="grid grid-cols-2 gap-8">
           {projectData && projectData.map((project, index) => (
@@ -47,7 +47,7 @@ const Project = () => {
                 {new Date(project.date).toLocaleDateString()}
               </span>
               <span>
-                <strong className="font-bold">Company</strong>: {project.place}
+                <strong className="font-bold">Location</strong>: {project.place}
               </span>
               <span>
                 <strong className="font-bold">Type</strong>:{" "}
@@ -62,7 +62,7 @@ const Project = () => {
               target="_blank" 
               className="text-red-500 font-bold hover:underline hover:text-red-400 text-xl"
               >
-                View the Project{" "}
+                Go to Github Repo{" "}
               <span role="img" aria-label="right pointer">
               👉
               </span>

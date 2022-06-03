@@ -5,19 +5,31 @@ export default {
   fields: [
     {
       name: "title",
+      title: "Title",
       type: "string",
     },
     {
       name: "date",
+      title: "Date",
       type: "datetime",
     },
     {
       name: "place",
-      type: "string"
+      title: "Place",
+      type: "string",
+    },
+    {
+      name: "image",
+      title: "Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: "description",
-      type: "text"
+      title: "Description",
+      type: "text",
     },
     {
       name: "projectType",
@@ -33,10 +45,12 @@ export default {
     },
     {
       name: "link",
+      title: "Link",
       type: "url",
     },
     {
       name: "tags",
+      title: "Tags",
       type: "array",
       of: [
         {
@@ -45,7 +59,7 @@ export default {
       ],
       options: {
         layout: "tags",
-      }
-    }
-  ]
-}
+      },
+    },
+  ],
+};
