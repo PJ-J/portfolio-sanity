@@ -37,9 +37,9 @@ const Person = () => {
         <h2 className="text-lg text-gray-600 flex justify-center mb-12">Just kidding I'm not crazy, just thought it would be a good way to learn Sanity.</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {personData && personData.map((person, index) => (
-          <article>
+          <article >
           <Link to={"/person/" + person.slug.current} key={person.slug.current}>
-            <span className="content h-80 block rounded shadow" key={index}>
+            <span className="animate glow content h-80 block rounded shadow" key={index}>
               <img
                 src={person.mainImage.asset.url}
                 alt={person.mainImage.alt}

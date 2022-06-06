@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
 import ParticlesBg from "particles-bg";
+import './Project.css'
 // import imageUrlBuilder from '@sanity/image-url'
 
 // const builder = imageUrlBuilder(sanityClient)
@@ -40,7 +41,7 @@ const Project = () => {
         </h2>
         <section className="grid grid-cols-2 gap-8">
           {projectData && projectData.map((project, index) => (
-          <article className="relative rounded-lg shadow-xl bg-gray-300 p-16" key={index}>
+          <article className={`relative animate glow delay-${index} rounded-lg shadow-xl bg-gray-300 p-16`} key={index}>
             <h3 className="text-gray-800 cursive text-3xl font-bold mb-2 hover:text-red-700">
               <a
                 href={project.link}
