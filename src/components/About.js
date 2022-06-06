@@ -33,7 +33,7 @@ const About = () => {
   return (
     <main className="relative">
       {/* <img src={Picture} alt="nature" className="absolute w-full" /> */}
-      <ParticlesBg type="cobweb" bg={true} />
+      <ParticlesBg color="#d3d3d3" type="circle" bg={true} />
       <div className="p-10 container mx-auto relative">
         <section className="blurry rounded-lg shadow-2xl lg:flex px-20 py-10">
           <img
