@@ -31,7 +31,7 @@ const About = () => {
   if (!author) return <div>Loading...</div>;
 
   return (
-    <main className="relative">
+    <main className="h-full">
       {/* <img src={Picture} alt="nature" className="absolute w-full" /> */}
       <ParticlesBg color="#d3d3d3" type="circle" bg={true} />
       <div className="p-10 container mx-auto relative">

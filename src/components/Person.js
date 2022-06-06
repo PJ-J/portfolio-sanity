@@ -29,7 +29,7 @@ const Person = () => {
   }, []);
 
   return (
-    <main className="min-h-screen p-12">
+    <main className="h-screen p-12">
     <ParticlesBg type="cobweb" bg={true} />
       <section className="container mx-auto">
       
