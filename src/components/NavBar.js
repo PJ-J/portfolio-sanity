@@ -53,7 +53,7 @@ const NavBar = () => {
           </NavLink>
           <a href="https://github.com/PJ-J" target="_blank" rel="noreferrer">
             <img
-              className="github"
+              className="github hover:opacity-100"
               src={github}
               alt="github"
             />
