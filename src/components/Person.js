@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client";
 import { Link } from "react-router-dom";
-import './Person.css'
+import "./Person.css";
 import BlockContent from "@sanity/block-content-to-react";
 import ParticlesBg from "particles-bg";
 
@@ -30,47 +30,61 @@ const Person = () => {
 
   return (
     <main className="h-screen p-12">
-    <ParticlesBg type="cobweb" bg={true} />
+      <ParticlesBg type="cobweb" bg={true} />
       <section className="container mx-auto">
-      
-        <h1 className="text-5xl flex justify-center cursive">Future Co-workers Page</h1>
-        <h2 className="text-lg text-gray-600 flex justify-center mb-12">Just kidding I'm not crazy, just thought it would be a good way to learn Sanity.</h2>
+        <h1 className="text-5xl flex justify-center cursive">
+          Future Co-workers Page
+        </h1>
+        <h2 className="text-lg text-gray-600 flex justify-center mb-12">
+          Just kidding I'm not crazy, just thought it would be a good way to
+          learn Sanity.
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {personData && personData.map((person, index) => (
-          <article >
-          <Link to={"/person/" + person.slug.current} key={person.slug.current}>
-            <span className="animate glow content h-80 block rounded shadow" key={index}>
-              <img
-                src={person.mainImage.asset.url}
-                alt={person.mainImage.alt}
-                className="content-image h-full rounded-r object-cover absolute"  
-               />
-               <div className="content-overlay"></div>
-              {/* <span className="block relative h-full flex justify-end items-end pr-4 pb-4">
+          {personData &&
+            personData.map((person, index) => (
+              <article>
+                <Link
+                  to={"/person/" + person.slug.current}
+                  key={person.slug.current}
+                >
+                  <span
+                    className="animate glow content h-80 block rounded shadow"
+                    key={index}
+                  >
+                    <img
+                      src={person.mainImage.asset.url}
+                      alt={person.mainImage.alt}
+                      className="content-image h-full rounded-r object-cover absolute"
+                    />
+                    <div className="content-overlay"></div>
+                    {/* <span className="block relative h-full flex justify-end items-end pr-4 pb-4">
                 <h3 className=" text-lg font-blog px-3 py-4 bg-gray-700 text-white bg-opacity-75 rounded">{person.name}</h3>
               </span> */}
-              <div className="content-details fadeIn-bottom">
-        <h3 className="content-title">{person.name}</h3>
-        <p className="content-text"><BlockContent
-            blocks={person.body}
-            projectId="j8bh8ea4"
-            dataset="production"
-          /></p>
-        <p className="content-text"><BlockContent
-            blocks={person.quote}
-            projectId="j8bh8ea4"
-            dataset="production"
-          /></p>
-        
-      </div>
-            </span>
-            </Link>
-          </article>
-          ))}
+                    <div className="content-details fadeIn-bottom">
+                      <h3 className="content-title">{person.name}</h3>
+                      <p className="content-text">
+                        <BlockContent
+                          blocks={person.body}
+                          projectId="j8bh8ea4"
+                          dataset="production"
+                        />
+                      </p>
+                      <p className="content-text">
+                        <BlockContent
+                          blocks={person.quote}
+                          projectId="j8bh8ea4"
+                          dataset="production"
+                        />
+                      </p>
+                    </div>
+                  </span>
+                </Link>
+              </article>
+            ))}
         </div>
       </section>
-    </main>  
-  )
+    </main>
+  );
 };
 
 export default Person;
