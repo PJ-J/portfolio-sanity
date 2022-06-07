@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import github from "../assets/images/github-brands.svg";
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
@@ -39,7 +40,7 @@ const NavBar = () => {
           >
             Projects
           </NavLink>
-          
+
           <NavLink
             to="/person"
             className={({ isActive }) =>
@@ -50,8 +51,14 @@ const NavBar = () => {
           >
             People at Alloy
           </NavLink>
+          <a href="https://github.com/PJ-J" target="_blank">
+            <img
+              className="github"
+              src={github}
+              alt="github"
+            />
+          </a>
         </nav>
-        
       </div>
     </header>
   );
