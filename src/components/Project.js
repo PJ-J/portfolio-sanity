@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
 import ParticlesBg from "particles-bg";
 import './Project.css'
+import serenityPic from '../assets/images/serenity_screen.png'
+import portfolioPic from '../assets/images/portfolio.jpg'
+import justMyTypePic from '../assets/images/justmytype.jpg'
+import chirprPic from '../assets/images/chirpr.jpg'
 // import imageUrlBuilder from '@sanity/image-url'
 
 // const builder = imageUrlBuilder(sanityClient)
@@ -23,13 +27,14 @@ const Project = () => {
       description,
       projectType,
       link,
-      tags,
-      "projectImage": image.asset->url
+      tags      
     }`
       )
       .then((data) => setProjectData(data))
       .catch(console.error);
   }, []);
+
+  const picArray = [portfolioPic, serenityPic, justMyTypePic, chirprPic]
 
   return (
     <main className="min-h-screen p-12">
@@ -41,8 +46,9 @@ const Project = () => {
         </h2>
         <section className="grid grid-cols-2 gap-8">
           {projectData && projectData.map((project, index) => (
-          <article className={`relative animate glow delay-${index} rounded-lg shadow-xl bg-gray-300 p-16`} key={index}>
-            <h3 className="text-gray-800 cursive text-3xl font-bold mb-2 hover:text-red-700">
+          <article className={`relative animate glow delay-${index} rounded-lg shadow-xl bg-gray-300 p-5`} key={index}>
+            <div className="pic relative flex justify-center"><img src={picArray[index]} alt="app" /></div>
+            <h3 className="text-gray-800 text-center cursive text-3xl font-bold m-2 hover:text-red-700">
               <a
                 href={project.link}
                 alt={project.title}
@@ -79,7 +85,6 @@ const Project = () => {
               </span>
               </a>
             </div>
-            {/* <img src={urlFor(project.projectImage).url()} alt="app" /> */}
           </article>
           ))}
         </section>
