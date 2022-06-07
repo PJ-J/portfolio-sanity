@@ -51,7 +51,7 @@ const NavBar = () => {
           >
             People at Alloy
           </NavLink>
-          <a href="https://github.com/PJ-J" target="_blank" rel="noreferrer">
+          <a href="https://github.com/PJ-J/sanity-site" target="_blank" rel="noreferrer">
             <img
               className="github hover:opacity-100"
               src={github}
