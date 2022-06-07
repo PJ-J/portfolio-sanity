@@ -54,7 +54,7 @@ const Project = () => {
                 <div className="pic relative flex justify-center">
                   <img src={picArray[index]} alt="app" />
                 </div>
-                <h3 className="text-gray-800 text-center cursive text-3xl font-bold m-2 hover:text-red-700">
+                <h3 className="text-gray-800 text-center cursive text-3xl font-bold m-2 hover:text-gray-400">
                   <a
                     href={project.link}
                     alt={project.title}
@@ -84,7 +84,7 @@ const Project = () => {
                     href={project.link}
                     rel="noopener noreferrer"
                     target="_blank"
-                    className="text-red-500 font-bold hover:underline hover:text-red-400 text-xl"
+                    className="text-gray-900 font-bold hover:underline hover:text-gray-400 text-xl"
                   >
                     Go to Github Repo{" "}
                     <span role="img" aria-label="right pointer">
