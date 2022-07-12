@@ -6,13 +6,19 @@ import serenityPic from "../assets/images/serenity_screen.png";
 import portfolioPic from "../assets/images/portfolio.jpg";
 import justMyTypePic from "../assets/images/justmytype.jpg";
 import chirprPic from "../assets/images/chirpr.jpg";
-// import imageUrlBuilder from '@sanity/image-url'
+import { motion } from "framer-motion";
 
-// const builder = imageUrlBuilder(sanityClient)
-
-// function urlFor(source) {
-//   return builder.image(source)
-// }
+const listItemContainerVariant = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.5 },
+  },
+};
+const listItemVariant = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
 
 const Project = () => {
   const [projectData, setProjectData] = useState(null);
@@ -44,12 +50,22 @@ const Project = () => {
         <h2 className="text-lg text-gray-600 flex justify-center mb-12">
           Resume projects with links to Github
         </h2>
-        <section className="grid grid-cols-2 gap-8">
-          {projectData &&
-            projectData.map((project, index) => (
-              <article
-                className={`relative animate glow delay-${index} rounded-lg shadow-xl bg-gray-300 p-5`}
+
+        {projectData && (
+          <motion.section
+            className="grid grid-cols-2 gap-8"
+            variants={listItemContainerVariant}
+            initial="hidden"
+            animate="show"
+          >
+            {projectData.map((project, index) => (
+              <motion.article
+                variants={listItemVariant}
+                className="relative rounded-lg shadow-xl bg-gray-300 p-5"
                 key={index}
+                whileHover={{
+                  scale: 1.05,
+                }}
               >
                 <div className="pic relative flex justify-center">
                   <img src={picArray[index]} alt="app" />
@@ -92,9 +108,10 @@ const Project = () => {
                     </span>
                   </a>
                 </div>
-              </article>
+              </motion.article>
             ))}
-        </section>
+          </motion.section>
+        )}
       </section>
     </main>
   );
