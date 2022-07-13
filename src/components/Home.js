@@ -4,25 +4,53 @@ import React from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
 
+const containerVariant = {
+  hidden: {
+    height: 0,
+    opacity: 0,
+  },
+  visible: {
+    height: "40vh",
+    opacity: 1,
+    transition: {
+      duration: 1,
+      when: "beforeChildren",
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const titleVariant = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+  hover: {
+    scale: 1.1,
+  },
+};
+
 const Home = () => {
   return (
     <main>
-      {/* <ParticlesBg type="lines" num={150} bg={true} />
+      <motion.div
+        className="border-solid border-2 border-gray-500 mt-24 mx-24"
+        variants={containerVariant}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* <ParticlesBg type="lines" num={150} bg={true} />
       <MouseParticles g={1} num={6} color="random" cull="container" level={6} /> */}
-      <section className="relative flex justify-center p-24 lg:pt-64 px-8">
-        <motion.h1
-          // animate={{ x: 100, y: 100 }}
-          // transition={{
-          //   delay: 1,
-          //   x: { type: "spring" },
-          //   default: { duration: 2 }
-          //  }}
-          whileHover={{ scale: 1.1 }}
-          className="text-6xl font-bold cursive leading-none lg:leading-snug home-name"
+        <motion.section
+          className="relative flex justify-center p-24 px-8"
+          variants={titleVariant}
         >
-          Hello, I'm PJ
-        </motion.h1>
-      </section>
+          <motion.h1 
+          className="text-6xl font-bold cursive leading-none lg:leading-snug home-name"
+          whileHover={{ scale: 1.05 }}
+          >
+            Hello, I'm PJ
+          </motion.h1>
+        </motion.section>
+      </motion.div>
     </main>
   );
 };
