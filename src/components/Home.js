@@ -28,9 +28,36 @@ const titleVariant = {
   },
 };
 
+const letterHolder = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 2,
+      staggerChildren: 0.5,
+    },
+  },
+}
+
+const letter = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+}
+
 const Home = () => {
   return (
     <main>
+    <motion.div
+    variants={letterHolder}
+    initial="hidden"
+    animate="visible"
+    >
+      <motion.p variants={letter}>H</motion.p>
+      <motion.p variants={letter}>E</motion.p>
+      <motion.p variants={letter}>L</motion.p>
+      <motion.p variants={letter}>L</motion.p>
+      <motion.p variants={letter}>O</motion.p>
+    </motion.div>
       <motion.div
         className="border-solid border-2 border-gray-500 mt-24 mx-24"
         variants={containerVariant}
@@ -43,14 +70,15 @@ const Home = () => {
           className="relative flex justify-center p-24 px-8"
           variants={titleVariant}
         >
-          <motion.h1 
-          className="text-6xl font-bold cursive leading-none lg:leading-snug home-name"
-          whileHover={{ scale: 1.05 }}
+          <motion.h1
+            className="text-6xl font-bold cursive leading-none lg:leading-snug home-name"
+            whileHover={{ scale: 1.05 }}
           >
             Hello, I'm PJ
           </motion.h1>
         </motion.section>
       </motion.div>
+        
     </main>
   );
 };
