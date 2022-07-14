@@ -2,7 +2,8 @@ import React from "react";
 // import ParticlesBg from "particles-bg";
 // import MouseParticles from 'react-mouse-particles'
 import "./Home.css";
-import { motion } from "framer-motion";
+import tomato from "../assets/images/tomato.png";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import styled from 'styled-components';
 
 const Wrapper = styled(motion.div)`
@@ -11,15 +12,21 @@ const Wrapper = styled(motion.div)`
   margin-top: 100px;
   background: papayawhip;
 `;
+
+const TallBox = styled(motion.div)`
+  height: 500vh;
+  border: 10px solid black;
+  margin: 100px;
+  border-radius: 10px;
+`;
  
 
 const containerVariant = {
   hidden: {
-    height: 0,
     opacity: 0,
   },
   visible: {
-    height: "40vh",
+    
     opacity: 1,
     transition: {
       duration: 1,
@@ -31,7 +38,8 @@ const containerVariant = {
 
 const titleVariant = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1 },
+  visible: { opacity: 1,
+  zIndex: -3 },
   hover: {
     scale: 1.1,
   },
@@ -51,19 +59,32 @@ const letter = {
   hidden: {  },
   visible: {
     
-    x: 200,
+    x: [0,200,0],
     y: [0, -20, 0],
      
     transition: {
-      yoyo: Infinity,
-      duration: .5,
+      repeat: Infinity,
+      duration: 1,
     },
   },
 };
 
+const tomatoImg = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1,
+    x: 250,
+    y: 900
+   },
+}
+
 const Home = () => {
+  const {scrollY, scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollY, [0,1000], [0,20]);
+  const opacity = useTransform(scrollY, [1200,1205], [1,0]);
+  const background = useTransform(scrollY, [1000,1100], ["rgb(255,255,255)","rgb(244,67,54)"]);
   return (
-    <main>
+    <motion.main style={{backgroundColor: background}}>
       <Wrapper variants={letterHolder} initial="hidden" animate="visible">
         <motion.p variants={letter}>H</motion.p>
         <motion.p variants={letter}>E</motion.p>
@@ -71,8 +92,16 @@ const Home = () => {
         <motion.p variants={letter}>L</motion.p>
         <motion.p variants={letter}>O</motion.p>
       </Wrapper>
-      <motion.div
-        className="border-solid border-2 border-gray-500 mt-24 mx-24"
+      <motion.img 
+        style={{scale, opacity}}
+        className="h-24" 
+        variants={tomatoImg} 
+        initial="hidden"
+        animate="visible"
+        src={tomato} 
+        alt="tomato" />
+      <TallBox
+        className=""
         variants={containerVariant}
         initial="hidden"
         animate="visible"
@@ -90,9 +119,13 @@ const Home = () => {
             Hello, I'm PJ
           </motion.h1>
         </motion.section>
-      </motion.div>
-    </main>
+      </TallBox>
+      
+    </motion.main>
   );
 };
 
 export default Home;
+
+
+
