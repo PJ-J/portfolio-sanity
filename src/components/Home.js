@@ -3,6 +3,7 @@ import React from "react";
 // import MouseParticles from 'react-mouse-particles'
 import "./Home.css";
 import tomato from "../assets/images/tomato.png";
+import tiles from "../assets/images/oriental-tiles.png";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import styled from 'styled-components';
 
@@ -15,6 +16,7 @@ const Wrapper = styled(motion.div)`
 
 const TallBox = styled(motion.div)`
   height: 500vh;
+  background-image: url(${tiles});
   border: 10px solid black;
   margin: 100px;
   border-radius: 10px;
@@ -39,7 +41,7 @@ const containerVariant = {
 const titleVariant = {
   hidden: { opacity: 0 },
   visible: { opacity: 1,
-  zIndex: -3 },
+  zIndex: -2 },
   hover: {
     scale: 1.1,
   },
