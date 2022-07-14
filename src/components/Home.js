@@ -3,6 +3,15 @@ import React from "react";
 // import MouseParticles from 'react-mouse-particles'
 import "./Home.css";
 import { motion } from "framer-motion";
+import styled from 'styled-components';
+
+const Wrapper = styled(motion.div)`
+  width: 200px;
+  margin: auto;
+  margin-top: 100px;
+  background: papayawhip;
+`;
+ 
 
 const containerVariant = {
   hidden: {
@@ -33,31 +42,35 @@ const letterHolder = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 2,
-      staggerChildren: 0.5,
+      staggerChildren: 0.05,
     },
   },
-}
+};
 
 const letter = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-}
+  hidden: {  },
+  visible: {
+    
+    x: 200,
+    y: [0, -20, 0],
+     
+    transition: {
+      yoyo: Infinity,
+      duration: .5,
+    },
+  },
+};
 
 const Home = () => {
   return (
     <main>
-    <motion.div
-    variants={letterHolder}
-    initial="hidden"
-    animate="visible"
-    >
-      <motion.p variants={letter}>H</motion.p>
-      <motion.p variants={letter}>E</motion.p>
-      <motion.p variants={letter}>L</motion.p>
-      <motion.p variants={letter}>L</motion.p>
-      <motion.p variants={letter}>O</motion.p>
-    </motion.div>
+      <Wrapper variants={letterHolder} initial="hidden" animate="visible">
+        <motion.p variants={letter}>H</motion.p>
+        <motion.p variants={letter}>E</motion.p>
+        <motion.p variants={letter}>L</motion.p>
+        <motion.p variants={letter}>L</motion.p>
+        <motion.p variants={letter}>O</motion.p>
+      </Wrapper>
       <motion.div
         className="border-solid border-2 border-gray-500 mt-24 mx-24"
         variants={containerVariant}
@@ -78,7 +91,6 @@ const Home = () => {
           </motion.h1>
         </motion.section>
       </motion.div>
-        
     </main>
   );
 };
