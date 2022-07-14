@@ -13,6 +13,10 @@ const Wrapper = styled(motion.div)`
   margin-top: 100px;
   background: papayawhip;
 `;
+const Word = styled(motion.h1)`
+  color: #9B8E77;
+  z-index: 1;
+`;
 
 const TallBox = styled(motion.div)`
   height: 500vh;
@@ -40,8 +44,7 @@ const containerVariant = {
 
 const titleVariant = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1,
-  zIndex: -2 },
+  visible: { opacity: 1 },
   hover: {
     scale: 1.1,
   },
@@ -114,12 +117,12 @@ const Home = () => {
           className="relative flex justify-center p-24 px-8"
           variants={titleVariant}
         >
-          <motion.h1
-            className="text-6xl font-bold cursive leading-none lg:leading-snug home-name"
+          <Word
+            className="text-6xl cursive home-name leading-none lg:leading-snug"
             whileHover={{ scale: 1.05 }}
           >
             Hello, I'm PJ
-          </motion.h1>
+          </Word>
         </motion.section>
       </TallBox>
       
