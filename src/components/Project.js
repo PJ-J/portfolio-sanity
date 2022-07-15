@@ -9,15 +9,12 @@ import chirprPic from "../assets/images/chirpr.jpg";
 import { motion } from "framer-motion";
 
 const listItemContainerVariant = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.5 },
-  },
+  hidden: {},
+  show: {},
 };
 const listItemVariant = {
   hidden: { opacity: 0 },
-  show: { opacity: 1 },
+  show: { opacity: 1, transition: { delay: 0.5 } },
 };
 
 const Project = () => {
@@ -55,16 +52,22 @@ const Project = () => {
           <motion.section
             className="grid grid-cols-2 gap-8"
             variants={listItemContainerVariant}
-            initial="hidden"
-            animate="show"
+            // initial="hidden"
+            // animate="show"
           >
             {projectData.map((project, index) => (
               <motion.article
                 variants={listItemVariant}
                 className="relative rounded-lg shadow-xl bg-gray-300 p-5"
                 key={index}
+                initial="hidden"
                 whileHover={{
                   scale: 1.05,
+                }}
+                whileInView="show"
+                viewport={{
+                  once: false,
+                  amount: "some",
                 }}
               >
                 <div className="pic relative flex justify-center">

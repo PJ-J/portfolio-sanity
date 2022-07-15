@@ -8,9 +8,9 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import styled from 'styled-components';
 
 const Wrapper = styled(motion.div)`
+  padding: 50px;
   width: 200px;
   margin: auto;
-  margin-top: 100px;
   background: papayawhip;
 `;
 const Word = styled(motion.h1)`
@@ -64,7 +64,7 @@ const letter = {
   hidden: {  },
   visible: {
     
-    x: [0,200,0],
+    x: [50,50,50],
     y: [0, -20, 0],
      
     transition: {
@@ -87,7 +87,7 @@ const Home = () => {
   const {scrollY, scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollY, [0,1000], [0,20]);
   const opacity = useTransform(scrollY, [1200,1205], [1,0]);
-  const background = useTransform(scrollY, [1000,1100], ["rgb(255,255,255)","rgb(244,67,54)"]);
+  const background = useTransform(scrollY, [1000,1100], ["rgb(155,142,119)","rgb(244,67,54)"]);
   return (
     <motion.main style={{backgroundColor: background}}>
       <Wrapper variants={letterHolder} initial="hidden" animate="visible">
